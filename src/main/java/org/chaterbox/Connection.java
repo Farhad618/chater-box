@@ -11,5 +11,6 @@ public class Connection {
     MongoDatabase db = clint.getDatabase("chater-box");
     MongoCollection col = db.getCollection("sampleCol");
     MongoCollection users = db.getCollection("users");
+    MongoCollection chats = db.getCollection("chats");
     MongoCollection tokens = db.getCollection("access-tokens");
 }
