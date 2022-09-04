@@ -1,10 +1,33 @@
 package org.chaterbox;
 
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCursor;
 import org.bson.Document;
 
+import java.io.BufferedReader;
+import java.io.Console;
+import java.util.Iterator;
+import java.util.Scanner;
+
 public class Main {
+    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
+    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
+    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+    //Java console color constants
+    public static final String TEXT_RED = "\u001B[31m";
+    public static final String TEXT_BLACK = "\u001B[30m";
+    public static final String TEXT_GREEN = "\u001B[32m";
+    public static final String TEXT_BLUE = "\u001B[34m";
+    public static final String TEXT_RESET = "\u001B[0m";
+    public static final String TEXT_PURPLE = "\u001B[35m";
+    public static final String TEXT_CYAN = "\u001B[36m";
+    public static final String TEXT_YELLOW = "\u001B[33m";
+    public static final String TEXT_WHITE = "\u001B[37m";
     public static void main(String[] args) {
-//        Connection connection = new Connection();
 //        Document sampleDoc = new Document().append("name", "js").append("chat", "55");
 //        connection.col.insertOne(sampleDoc);
 
@@ -23,8 +46,63 @@ public class Main {
 //
 //            sendChatAs.addChat("from sdf hi 3");
 //        }
+        Connection connection = new Connection();
+        Scanner sc = new Scanner(System.in);
+        Console console = System.console();
+
+        System.out.print("User: " + TEXT_RED);
+        String user = sc.next();
+        System.out.print(TEXT_RESET + "Pass: " + TEXT_GREEN);
+        String pass = sc.next();
+        System.out.println(TEXT_RESET);
+//        char[] passwordChars = console.readPassword();
+//        String pass= new String(passwordChars);
 
 
+        UserLogin uli = new UserLogin(user, pass);
+        String s = uli.loginKaro();
+//        System.out.println(s);
+
+        if (s == null) {
+            System.out.println("Token: ");
+            String tok = sc.next();
+            UserSignUp usu = new UserSignUp(user, pass, tok);
+            s = usu.addUser();
+
+        }
+//        System.out.println(s);
+
+        if (s != null) {
+            String option = "VIEW";
+
+            while (!option.equals("QUIT")) {
+                switch (option.toUpperCase()) {
+                    case "VIEW" -> {
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
+
+                        FindIterable<Document> iterable = connection.chats.find();
+                        MongoCursor<Document> cursor = iterable.iterator();
+                        while (cursor.hasNext()) {
+                            Document doctemp = cursor.next();
+                            System.out.println(TEXT_BLUE + "[ "+ TEXT_RED + doctemp.get("chatof") + TEXT_RESET + TEXT_BLUE + " ] " + TEXT_GREEN + ": " + TEXT_YELLOW + doctemp.get("msg") + TEXT_RESET);
+                        }
+                    }
+                    case "SEND" -> {
+                        System.out.print(TEXT_PURPLE + "/> " + TEXT_RESET);
+                        sc.nextLine();
+                        String chtStr = sc.nextLine();
+                        if (chtStr.length() > 0) {
+                            AddChat ac = new AddChat(s);
+                            ac.addChat(chtStr);
+                        }
+                    }
+                    default -> System.out.println("Error command.");
+                }
+                System.out.print("\\> ");
+                option = sc.next();
+            }
+        }
 
     }
 }

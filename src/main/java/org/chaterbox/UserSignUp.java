@@ -3,9 +3,7 @@ package org.chaterbox;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.MongoException;
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.model.Projections;
-import com.mongodb.client.model.Sorts;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -26,7 +24,7 @@ public class UserSignUp {
         this.token = token;
     }
 
-    void addUser() {
+    String addUser() {
         DBObject query = new BasicDBObject("token", token);
 //        connection.tokens.find((Bson) query);
 //        if (){
@@ -55,10 +53,13 @@ public class UserSignUp {
                 } catch (MongoException me) {
                     System.err.println("Unable to insert due to an error: " + me);
                 }
+                    return userName;
             } else {
                 System.out.println("User already exist.");
+                return null;
             }
         }
+        return null;
 
     }
 
