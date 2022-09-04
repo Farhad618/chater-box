@@ -9,6 +9,8 @@ import java.io.Console;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import static com.mongodb.client.model.Filters.eq;
+
 public class Main {
     public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
     public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
@@ -28,6 +30,7 @@ public class Main {
     public static final String TEXT_YELLOW = "\u001B[33m";
     public static final String TEXT_WHITE = "\u001B[37m";
     public static void main(String[] args) {
+//        System.out.println("\u001B[40m");
 //        Document sampleDoc = new Document().append("name", "js").append("chat", "55");
 //        connection.col.insertOne(sampleDoc);
 
@@ -48,7 +51,7 @@ public class Main {
 //        }
         Connection connection = new Connection();
         Scanner sc = new Scanner(System.in);
-        Console console = System.console();
+//        Console console = System.console();
 
         System.out.print("User: " + TEXT_RED);
         String user = sc.next();
@@ -64,7 +67,7 @@ public class Main {
 //        System.out.println(s);
 
         if (s == null) {
-            System.out.println("Token: ");
+            System.out.print("Token: ");
             String tok = sc.next();
             UserSignUp usu = new UserSignUp(user, pass, tok);
             s = usu.addUser();
@@ -74,6 +77,16 @@ public class Main {
 
         if (s != null) {
             String option = "VIEW";
+            String msgToken = "";
+
+            while (msgToken.length() < 10) {
+                System.out.print("Koken: ");
+                msgToken = sc.next();
+
+                if (msgToken.length() < 10) {
+                    System.out.println("Koken must be at-list length of 10.");
+                }
+            }
 
             while (!option.equals("QUIT")) {
                 switch (option.toUpperCase()) {
@@ -81,11 +94,10 @@ public class Main {
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
 
-                        FindIterable<Document> iterable = connection.chats.find();
-                        MongoCursor<Document> cursor = iterable.iterator();
-                        while (cursor.hasNext()) {
-                            Document doctemp = cursor.next();
-                            System.out.println(TEXT_BLUE + "[ "+ TEXT_RED + doctemp.get("chatof") + TEXT_RESET + TEXT_BLUE + " ] " + TEXT_GREEN + ": " + TEXT_YELLOW + doctemp.get("msg") + TEXT_RESET);
+                        FindIterable<Document> iterable = connection.chats.find(eq("koken", msgToken));
+                        for (Document doctemp : iterable) {
+                            System.out.println(TEXT_BLUE + "[ " + TEXT_RED + doctemp.get("chatof") + TEXT_RESET
+                                    + TEXT_BLUE + " ] " + TEXT_GREEN + ": " + TEXT_YELLOW + doctemp.get("msg") + TEXT_RESET);
                         }
                     }
                     case "SEND" -> {
@@ -94,7 +106,7 @@ public class Main {
                         String chtStr = sc.nextLine();
                         if (chtStr.length() > 0) {
                             AddChat ac = new AddChat(s);
-                            ac.addChat(chtStr);
+                            ac.addChat(chtStr, msgToken);
                         }
                     }
                     default -> System.out.println("Error command.");
