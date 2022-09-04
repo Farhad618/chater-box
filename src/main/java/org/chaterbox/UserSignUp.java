@@ -34,9 +34,7 @@ public class UserSignUp {
         Bson projectionFields = Projections.fields(
                 Projections.include("token", "users"),
                 Projections.excludeId());
-        Document doc = (Document) connection.tokens.find(eq("token", token))
-                .projection(projectionFields)
-                .first();
+        Document doc = (Document) connection.tokens.findOneAndDelete(eq("token", token));
         if (doc == null) {
             System.out.println("Enter a valid token.");
         } else {

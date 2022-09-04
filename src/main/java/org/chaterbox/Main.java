@@ -53,11 +53,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 //        Console console = System.console();
 
+        System.out.println("Welcome to ChaterBox");
+
         System.out.print("User: " + TEXT_RED);
         String user = sc.next();
         System.out.print(TEXT_RESET + "Pass: " + TEXT_GREEN);
         String pass = sc.next();
-        System.out.println(TEXT_RESET);
+        System.out.print(TEXT_RESET);
 //        char[] passwordChars = console.readPassword();
 //        String pass= new String(passwordChars);
 
@@ -66,7 +68,7 @@ public class Main {
         String s = uli.loginKaro();
 //        System.out.println(s);
 
-        if (s == null) {
+        while (s == null) {
             System.out.print("Token: ");
             String tok = sc.next();
             UserSignUp usu = new UserSignUp(user, pass, tok);
@@ -96,8 +98,14 @@ public class Main {
 
                         FindIterable<Document> iterable = connection.chats.find(eq("koken", msgToken));
                         for (Document doctemp : iterable) {
-                            System.out.println(TEXT_BLUE + "[ " + TEXT_RED + doctemp.get("chatof") + TEXT_RESET
+                            if (doctemp.get("msg").equals("[:bokhate]")){
+                                System.out.println(TEXT_BLUE + "[ " + TEXT_RED + doctemp.get("chatof") + TEXT_RESET
+                                        + TEXT_BLUE + " ] " + TEXT_GREEN + ": " + TEXT_YELLOW + "[farhad]" + TEXT_RESET);
+                            } else {
+                                System.out.println(TEXT_BLUE + "[ " + TEXT_RED + doctemp.get("chatof") + TEXT_RESET
                                     + TEXT_BLUE + " ] " + TEXT_GREEN + ": " + TEXT_YELLOW + doctemp.get("msg") + TEXT_RESET);
+                            }
+
                         }
                     }
                     case "SEND" -> {
