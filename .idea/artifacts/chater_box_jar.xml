@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="chater-box:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/chater_box_jar</output-path>
+    <root id="archive" name="chater-box.jar">
+      <element id="module-output" name="chater-box" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.0/slf4j-api-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-sync/4.7.1/mongodb-driver-sync-4.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/bson-record-codec/4.7.1/bson-record-codec-4.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/ch/qos/reload4j/reload4j/1.2.19/reload4j-1.2.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/bson/4.7.1/bson-4.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/4.7.1/mongodb-driver-core-4.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-reload4j/2.0.0/slf4j-reload4j-2.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

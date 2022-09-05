@@ -2,6 +2,7 @@ package org.chaterbox;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
+//import org.apache.log4j.BasicConfigurator;
 import org.bson.Document;
 
 import java.io.BufferedReader;
@@ -20,15 +21,15 @@ public class Main {
     public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
     //Java console color constants
-    public static final String TEXT_RED = "\u001B[31m";
-    public static final String TEXT_BLACK = "\u001B[30m";
-    public static final String TEXT_GREEN = "\u001B[32m";
-    public static final String TEXT_BLUE = "\u001B[34m";
-    public static final String TEXT_RESET = "\u001B[0m";
-    public static final String TEXT_PURPLE = "\u001B[35m";
-    public static final String TEXT_CYAN = "\u001B[36m";
-    public static final String TEXT_YELLOW = "\u001B[33m";
-    public static final String TEXT_WHITE = "\u001B[37m";
+    public static final String TEXT_RED = "";
+    public static final String TEXT_BLACK = "";
+    public static final String TEXT_GREEN = "";
+    public static final String TEXT_BLUE = "";
+    public static final String TEXT_RESET = "";
+    public static final String TEXT_PURPLE = "";
+    public static final String TEXT_CYAN = "";
+    public static final String TEXT_YELLOW = "";
+    public static final String TEXT_WHITE = "";
     public static void main(String[] args) {
 //        System.out.println("\u001B[40m");
 //        Document sampleDoc = new Document().append("name", "js").append("chat", "55");
@@ -49,6 +50,7 @@ public class Main {
 //
 //            sendChatAs.addChat("from sdf hi 3");
 //        }
+//        BasicConfigurator.configure();
         Connection connection = new Connection();
         Scanner sc = new Scanner(System.in);
 //        Console console = System.console();
@@ -93,8 +95,8 @@ public class Main {
             while (!option.equals("QUIT")) {
                 switch (option.toUpperCase()) {
                     case "VIEW" -> {
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
+//                        System.out.print("\033[H\033[2J");
+//                        System.out.flush();
 
                         FindIterable<Document> iterable = connection.chats.find(eq("koken", msgToken));
                         for (Document doctemp : iterable) {

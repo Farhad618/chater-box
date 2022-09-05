@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="chater-box:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4164068a-adf9-41dd-948c-79f8bbeb80b1" name="Changes" comment="koken system added. first final setup.">
+    <list default="true" id="4164068a-adf9-41dd-948c-79f8bbeb80b1" name="Changes" comment="some changes. second final setup.">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/chater_box_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +43,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Bokhate/Downloads/slf4j-simple-2.0.0.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.chaterbox.Main" />
@@ -110,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662307681083</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some changes. second final setup.">
+      <created>1662309152348</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1662309152348</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,7 +146,8 @@
     <MESSAGE value="add chat set" />
     <MESSAGE value="chat send and view set up. chat color setup" />
     <MESSAGE value="koken system added. first final setup." />
-    <option name="LAST_COMMIT_MESSAGE" value="koken system added. first final setup." />
+    <MESSAGE value="some changes. second final setup." />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes. second final setup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
