@@ -56,11 +56,16 @@ public class Main {
 //        Console console = System.console();
 
         System.out.println("Welcome to ChaterBox");
-
-        System.out.print("User: " + TEXT_RED);
-        String user = sc.next();
-        System.out.print(TEXT_RESET + "Pass: " + TEXT_GREEN);
-        String pass = sc.next();
+        String user = "";
+        String pass = "";
+        while(user.trim().length()<3){
+            System.out.print("User: " + TEXT_RED);
+            user = sc.next();
+        }
+        while(pass.trim().length()<8){
+            System.out.print(TEXT_RESET + "Pass: " + TEXT_GREEN);
+            pass = sc.next();
+        }
         System.out.print(TEXT_RESET);
 //        char[] passwordChars = console.readPassword();
 //        String pass= new String(passwordChars);
@@ -83,11 +88,11 @@ public class Main {
             String option = "VIEW";
             String msgToken = "";
 
-            while (msgToken.length() < 10) {
+            while (msgToken.trim().length() < 10) {
                 System.out.print("Koken: ");
                 msgToken = sc.next();
 
-                if (msgToken.length() < 10) {
+                if (msgToken.trim().length() < 10) {
                     System.out.println("Koken must be at-list length of 10.");
                 }
             }
