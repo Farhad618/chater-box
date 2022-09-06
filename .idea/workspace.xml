@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4164068a-adf9-41dd-948c-79f8bbeb80b1" name="Changes" comment="jar file created. ANSI color removed">
-      <change afterPath="$PROJECT_DIR$/src/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/chater_box_jar/chater-box.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/chater_box_jar/chater-box.jar" afterDir="false" />
+    <list default="true" id="4164068a-adf9-41dd-948c-79f8bbeb80b1" name="Changes" comment="user name password input validation">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/AddChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/AddChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662347787399</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="user name password input validation">
+      <created>1662432889926</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662432889926</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,7 +162,8 @@
     <MESSAGE value="koken system added. first final setup." />
     <MESSAGE value="some changes. second final setup." />
     <MESSAGE value="jar file created. ANSI color removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="jar file created. ANSI color removed" />
+    <MESSAGE value="user name password input validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="user name password input validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

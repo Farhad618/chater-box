@@ -6,8 +6,8 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 
 public class AddChat {
-    private Connection connection = new Connection();
-    private String userName;
+    private final Connection connection = new Connection();
+    private final String userName;
 
     AddChat (String userName) {
         this.userName = userName;
