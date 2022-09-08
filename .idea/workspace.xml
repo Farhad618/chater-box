@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4164068a-adf9-41dd-948c-79f8bbeb80b1" name="Changes" comment="user name password input validation">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/AddChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/AddChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/Connection.java" afterDir="false" />
+    <list default="true" id="4164068a-adf9-41dd-948c-79f8bbeb80b1" name="Changes" comment="code clean up.. warning reduced. version 1.0.0 jar build">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/chater_box_jar/chater-box.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/chater_box_jar/chater-box.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +32,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/log4j.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/chaterbox/AddChat.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/chaterbox/Connection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/chaterbox/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/chaterbox/UserLogin.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/chaterbox/UserSignUp.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,18 +48,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bokhate/Downloads/slf4j-simple-2.0.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Bokhate/Downloads/slf4j-simple-2.0.0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.chaterbox.Main" />
@@ -140,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662432889926</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="code clean up.. warning reduced. version 1.0.0 jar build">
+      <created>1662433820739</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1662433820739</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,7 +175,8 @@
     <MESSAGE value="some changes. second final setup." />
     <MESSAGE value="jar file created. ANSI color removed" />
     <MESSAGE value="user name password input validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="user name password input validation" />
+    <MESSAGE value="code clean up.. warning reduced. version 1.0.0 jar build" />
+    <option name="LAST_COMMIT_MESSAGE" value="code clean up.. warning reduced. version 1.0.0 jar build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,6 +2,8 @@ package org.chaterbox;
 
 import com.mongodb.client.FindIterable;
 import org.bson.Document;
+
+import java.io.Console;
 import java.util.Scanner;
 import static com.mongodb.client.model.Filters.eq;
 
@@ -9,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Connection connection = new Connection();
         Scanner sc = new Scanner(System.in);
+        Console cnsl = System.console();
 
         System.out.println("Welcome to ChaterBox");
         String user = "";
@@ -17,9 +20,16 @@ public class Main {
             System.out.print("User: ");
             user = sc.next();
         }
-        while (pass.trim().length() < 8) {
-            System.out.print("Pass: ");
-            pass = sc.next();
+        if (cnsl == null) {
+            while (pass.trim().length() < 8) {
+                System.out.print("Pass: ");
+                pass = sc.next();
+            }
+        } else {
+            while (pass.trim().length() < 8) {
+//                System.out.print("Pass: ");
+                pass = String.valueOf(cnsl.readPassword("Pass: "));
+            }
         }
 
 
@@ -48,7 +58,8 @@ public class Main {
 
             while (!option.equals("QUIT")) {
                 switch (option.toUpperCase()) {
-                    case "VIEW" -> {
+                    case "V":
+                    case "VIEW": {
                         FindIterable<Document> iterable = connection.chats.find(eq("koken", msgToken));
                         for (Document doctemp : iterable) {
                             if (doctemp.get("msg").equals("[:bokhate]")) {
@@ -57,8 +68,10 @@ public class Main {
                                 System.out.println("[ " + doctemp.get("chatof") + " ] " + ": " + doctemp.get("msg"));
                             }
                         }
+                        break;
                     }
-                    case "SEND" -> {
+                    case "S":
+                    case "SEND": {
                         System.out.print("/> ");
                         sc.nextLine();
                         String chtStr = sc.nextLine();
@@ -66,8 +79,9 @@ public class Main {
                             AddChat ac = new AddChat(s);
                             ac.addChat(chtStr, msgToken);
                         }
+                        break;
                     }
-                    default -> System.out.println("Error command.");
+                    default : System.out.println("Error command.");
                 }
                 System.out.print("\\> ");
                 option = sc.next();
